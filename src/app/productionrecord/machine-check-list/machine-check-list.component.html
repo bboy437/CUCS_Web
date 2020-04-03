@@ -1,0 +1,235 @@
+<app-production-record-header [ProductionPlanID]="ProductionPlanID"></app-production-record-header>
+
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="FormGroup1">
+    <form [formGroup]="FormGroup1">
+      <ng-template matStepLabel>เช็คความพร้อมเครื่องจักร</ng-template>
+      <div class="container" style="padding-top:5px; padding-bottom:5px;" fxLayout="row" fxLayoutAlign="center center"
+        fxLayout.xs="column" fxFlexFill>
+        <div fxFlex="90px">
+          <button mat-raised-button color="accent" (click)="btnCloseClick()">Close</button>
+        </div>
+        <div fxFlex="100">
+          <mat-label>เช็คความพร้อมเครื่องจักร</mat-label>
+        </div>
+        <div fxFlex="90px">
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
+        </div>
+      </div>
+
+
+      <mat-card class="mat-card-machine-check-list">
+        <app-machine-check-list-item *ngFor="let item of arrobjMCL1" [objMachineCheckList]="item">
+          
+        </app-machine-check-list-item>
+      </mat-card>
+
+
+
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="FormGroup2">
+    <form [formGroup]="FormGroup2">
+      <ng-template matStepLabel>เช็คสภาพการทำงานของ EPC</ng-template>
+      <div class="container" style="padding-top:5px; padding-bottom:5px;" fxLayout="row" fxLayoutAlign="center center"
+        fxLayout.xs="column" fxFlexFill>
+        <div fxFlex="90px">
+          <button mat-raised-button color="accent" matStepperPrevious>Back</button>
+        </div>
+        <div fxFlex="100">
+          <mat-label>เช็คความพร้อมเครื่องจักร</mat-label>
+        </div>
+        <div fxFlex="90px">
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
+        </div>
+      </div>
+      <mat-card class="mat-card-machine-check-list">
+        <app-machine-check-list-item *ngFor="let item of arrobjMCL2" [objMachineCheckList]="item"></app-machine-check-list-item>
+      </mat-card>
+
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="FormGroup3">
+    <form [formGroup]="FormGroup3">
+      <ng-template matStepLabel>เช็คสภาพการทำงานของ EPC</ng-template>
+      <div class="container" style="padding-top:5px; padding-bottom:5px;" fxLayout="row" fxLayoutAlign="center center"
+        fxLayout.xs="column" fxFlexFill>
+        <div fxFlex="90px">
+          <button mat-raised-button color="accent" matStepperPrevious>Back</button>
+        </div>
+        <div fxFlex="100">
+          <mat-label>เช็คความพร้อมเครื่องจักร</mat-label>
+        </div>
+        <div fxFlex="90px">
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
+        </div>
+      </div>
+      <mat-card class="mat-card-machine-check-list">
+        <app-machine-check-list-item *ngFor="let item of arrobjMCL2" [objMachineCheckList]="item"></app-machine-check-list-item>
+      </mat-card>
+
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Start Operation</ng-template>
+    <div class="container" style="padding-top:5px; padding-bottom:5px;" fxLayout="row" fxLayoutAlign="center center"
+      fxLayout.xs="column" fxFlexFill>
+      <div fxFlex="90px">
+        <button mat-raised-button color="accent" matStepperPrevious>Back</button>
+      </div>
+      <div fxFlex="100">
+        <mat-label>Start Operation</mat-label>
+      </div>
+      <div fxFlex="90px">
+
+      </div>
+    </div>
+
+    <div class="container" style="padding-bottom:5px;" fxLayout="row" fxLayoutAlign="center center" fxLayout.xs="column"
+      fxFlexFill>
+      <div fxFlex="100">
+        <mat-card class="mat-card-roll-no">
+          <div class="container" style="padding-top: 5px;" fxLayout="row" fxLayoutAlign="center center" fxLayout.xs="column"
+            fxFlexFill>
+            <div fxFlex="5"></div>
+            <div fxFlex="20">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Roll No." [(ngModel)]="fabricRollNo">
+              </mat-form-field>
+            </div>
+            <div fxFlex="5"></div>
+            <div fxFlex="10">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Spindle" [(ngModel)]="spindleNo">
+              </mat-form-field>
+            </div>
+            <div fxFlex="5"></div>
+            <div fxFlex="50">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Remark" [(ngModel)]="remark">
+              </mat-form-field>
+            </div>
+            <div fxFlex="5"></div>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+    <div class="container" style="padding-bottom:5px;" fxLayout="row" fxLayoutAlign="center center" fxLayout.xs="column"
+      fxFlexFill>
+      <div fxFlex="100">
+
+        <mat-card class="mat-card-machine-check-list">
+          <div class="container" style="padding-top: 5px;" fxLayout="row" fxLayoutAlign="center center" fxLayout.xs="column"
+            fxFlexFill>
+            <div fxFlex="15"></div>
+            <div fxFlex="110px">
+              <mat-label>น้ำหนัก (g/m2)</mat-label>
+            </div>
+
+            <div fxFlex="20">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="ซ้าย">
+              </mat-form-field>
+            </div>
+            <div fxFlex="5"></div>
+            <div fxFlex="20">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="กลาง">
+              </mat-form-field>
+            </div>
+            <div fxFlex="5"></div>
+            <div fxFlex="20">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="ขวา" >
+              </mat-form-field>
+            </div>
+            <div fxFlex="15"></div>
+          </div>
+          <div class="container" style="padding-top: 5px;" fxLayout="row" fxLayoutAlign="center center" fxLayout.xs="column"
+            fxFlexFill>
+            <div fxFlex="15"></div>
+            <div fxFlex="110px">
+              <mat-label>ความหนา (mm)</mat-label>
+            </div>
+
+            <div fxFlex="20">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="ซ้าย" >
+              </mat-form-field>
+            </div>
+            <div fxFlex="5"></div>
+            <div fxFlex="20">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="กลาง">
+              </mat-form-field>
+            </div>
+            <div fxFlex="5"></div>
+            <div fxFlex="20">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="ขวา">
+              </mat-form-field>
+            </div>
+            <div fxFlex="15"></div>
+          </div>
+
+        </mat-card>
+      </div>
+    </div>
+
+    <div class="container" style="padding-bottom:5px;" fxLayout="row" fxLayoutAlign="center center" fxLayout.xs="column"
+      fxFlexFill>
+      <div fxFlex="100">
+        <mat-card class="mat-card-width">
+          <div class="container" style="padding-top: 5px; " fxLayout="row" fxLayoutAlign="center center" fxLayout.xs="column"
+            fxFlexFill>
+            <div fxFlex="15">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="หน้ากว้าว (cm.)" >
+              </mat-form-field>
+            </div>
+            <div fxFlex="5"></div>
+            <div fxFlex="15">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="ความยาว (m.)" >
+              </mat-form-field>
+            </div>
+            <div fxFlex="5"></div>
+            <div fxFlex="25">
+              <mat-label>แนวรอยพับผ้าดิบเฉียงขึ้นซ้าย</mat-label>
+            </div>
+            <div fxFlex="105px">
+              <mat-button-toggle-group name="OKNG" aria-label="OK NG">
+                <mat-button-toggle [ngClass]="{'mat-button-toggle-checkedOK' : 'OK' === 'OK'}" value="OK">OK</mat-button-toggle>
+                <mat-button-toggle [ngClass]="{'mat-button-toggle-checkedNG' : 'OK' === 'NG'}" value="NG">NG</mat-button-toggle>
+              </mat-button-toggle-group>
+            </div>
+            <div fxFlex="5"></div>
+            <div fxFlex="25">
+              <mat-label>หัวม้วนผ้าดิบเรียบซ้าย-ขวา</mat-label>
+            </div>
+            <div fxFlex="105px">
+              <mat-button-toggle-group name="OKNG" aria-label="OK NG">
+                <mat-button-toggle [ngClass]="{'mat-button-toggle-checkedOK' : 'OK' === 'OK'}" value="OK">OK</mat-button-toggle>
+                <mat-button-toggle [ngClass]="{'mat-button-toggle-checkedNG' : 'OK' === 'NG'}" value="NG">NG</mat-button-toggle>
+              </mat-button-toggle-group>
+            </div>
+            <div fxFlex="5"></div>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+
+    <div class="container" style="padding-top: 5px;" fxLayout="row" fxLayoutAlign="center center" fxLayout.xs="column"
+      fxFlexFill>
+      <div fxFlex="50">
+
+      </div>
+      <div fxFlex="125px">
+        <button mat-raised-button class="mat-btn-start-operation" (click)="btnStartOperationClick()">Start Operation</button>
+      </div>
+      <div fxFlex="50">
+
+      </div>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

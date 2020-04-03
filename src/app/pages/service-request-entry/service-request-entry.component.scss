@@ -1,0 +1,71 @@
+.mat-toolbar-row {
+    height: 40px;
+  }
+  
+  .mat-header-row {
+    background-color: #9cb5e4;
+    color: white;
+  }
+   
+  
+  
+  .mat-row:nth-child(even) {
+    background-color: #e9e5e5;
+    color: white;
+  }
+  
+  
+  .mat-row {
+    min-height: 33px;
+  }
+  
+  .mat-toolbar-row {
+    height: 40px;
+  }
+  
+  .table-container {
+    padding: 5px 15px 15px 15px;
+  }
+  .table-component-holder {
+    border: 1px solid #327ebd;
+    background-color: white;
+  }
+ 
+  .mat-headline{
+    font-size: 16px
+  }
+  
+  .buttonGreen {
+    background-color: #4CAF50;
+    color: white
+   } 
+   .buttonYellow {
+    background-color: rgb(252, 156, 11);
+    color: white
+   } 
+   .mat-table{
+     width: 98.5%;
+     text-align: center;
+     margin-left: 0.8vw;
+   }
+
+   
+   .card-container-right{
+    display: inline;
+    font-size: 16px;
+  }
+  .JobControl {
+    background: rgb(244, 244, 255);
+    padding : 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+.mat-dialog-container.mat-dialog-container {
+  padding:0px !important;
+}
+
+.Textarea{
+  line-height: 18pt;
+ }

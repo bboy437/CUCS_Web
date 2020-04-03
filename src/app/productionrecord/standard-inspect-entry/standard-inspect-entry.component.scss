@@ -1,0 +1,76 @@
+// .mat-card {
+//      background: rgb(215, 215, 255);
+//     padding : 5px;
+//     padding-left: 10px;
+//     padding-right: 10px;
+//     border-radius: 10px;
+// }
+
+.card-container-right{
+    display: inline;
+    font-size: 16px;
+  }
+
+  .column{
+    background: #ff9900;
+    padding : 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+  }
+  .column1{
+    background:#2eb82e;
+    padding : 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+  }
+
+  .rowmatcardone{
+    background: rgb(253, 253, 253);
+    padding : 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+  }
+
+
+//   mat-button-toggle.mat-button-toggle-checked {
+//     background: 	#32CD32;
+//     color: rgb(255, 255, 255);
+//     outline: none;
+// }
+
+.mat-card-machine-check-list {
+    background: rgb(255, 228, 215);
+    padding : 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+}
+
+.mat-card-width {
+    background: rgb(85, 190, 126);
+    padding : 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+}
+
+.mat-card-roll-no {
+    background: rgb(88, 228, 174);
+    padding : 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+}
+
+
+
+.mat-horizontal-stepper-header{
+    height: 50px !important;
+}
+
+.mat-btn-start-operation {
+    background: rgb(151, 255, 125);
+}

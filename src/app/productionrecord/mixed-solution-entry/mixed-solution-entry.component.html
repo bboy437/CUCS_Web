@@ -1,0 +1,66 @@
+<!-- <div class="spinner-loading-shade" *ngIf="isLoadingResults">
+  <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+</div> -->
+
+<app-production-record-header [ProductionPlanID]="ProductionPlanID"></app-production-record-header>
+
+<mat-table [dataSource]="dataSource" matSort>
+  <ng-container matColumnDef="TankNo">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Tank No.</mat-header-cell>
+    <mat-cell *matCellDef="let mixedsolution"> {{mixedsolution.TankNo}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="MixingDate">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Mixing Date</mat-header-cell>
+    <mat-cell *matCellDef="let mixedsolution"> {{mixedsolution.MixingDate}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="SoildContent">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> %Soild Content</mat-header-cell>
+    <mat-cell *matCellDef="let mixedsolution"> {{mixedsolution.SoildContent}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="RefToDDNo">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Ref. To DD No.</mat-header-cell>
+    <mat-cell *matCellDef="let mixedsolution"> {{mixedsolution.RefToDDNo}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="Startngime">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Startng Time</mat-header-cell>
+    <mat-cell *matCellDef="let mixedsolution"> {{mixedsolution.Startngime}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="In">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>In</mat-header-cell>
+    <mat-cell *matCellDef="let mixedsolution"> {{mixedsolution.In}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="Out">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Out</mat-header-cell>
+    <mat-cell *matCellDef="let mixedsolution"> {{mixedsolution.Out}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="VesselWt">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Vessel Wt.</mat-header-cell>
+    <mat-cell *matCellDef="let mixedsolution"> {{mixedsolution.VesselWt}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="RefToRcNo">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Ref. To Rc No.</mat-header-cell>
+    <mat-cell *matCellDef="let mixedsolution"> {{mixedsolution.RefToRcNo}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef>
+      <button mat-icon-button color="primary" (click)="addNew()">
+        <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>
+      </button>
+    </mat-header-cell>
+    <mat-cell *matCellDef="let row; let i=index;">
+      <button mat-icon-button color="accent" >
+        <mat-icon aria-label="Edit">edit</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;" matRipple class="element-row" ></mat-row>
+
+
+</mat-table>
+
+
+
+<mat-paginator [length]="5" [pageSize]="10" [pageSizeOptions]="[10, 25]">
+</mat-paginator>

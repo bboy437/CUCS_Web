@@ -1,0 +1,171 @@
+<!-- <div class="spinner-loading-shade" *ngIf="isLoadingResults">
+  <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+</div> -->
+
+<mat-card class="column">
+
+  <div class="container" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+    <div class="item item-1">
+      <button mat-raised-button color="primary">Save</button>
+    </div>
+    <div class="item item-2" fxFlex="100%">
+
+    </div>
+    <div class="item item-3">
+      <button mat-raised-button color="accent" (click)="btnCloseClick()" >Close</button>
+    </div>
+  </div><br>
+
+  <div class="container" fxLayout="row" fxLayout.xs="column" fxFlexFill>
+    <div fxFlex="22">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="แบบผ้าสำเร็จ">
+      </mat-form-field>
+    </div>
+    <div fxFlex="4"></div>
+    <div fxFlex="22">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="เอกสารเลขที่">
+      </mat-form-field>
+    </div>
+    <div fxFlex="4"></div>
+    <div fxFlex="22">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Issued No.">
+      </mat-form-field>
+    </div>
+    <div fxFlex="4"></div>
+    <div fxFlex="22">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="ใบแพ็คผ้าเลขที่">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="container" fxLayout="row" fxLayout.xs="column" fxFlexFill>
+    <div fxFlex="22">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="เอกสาร DD เลขที่">
+      </mat-form-field>
+    </div>
+    <div fxFlex="4"></div>
+    <div fxFlex="11">
+      <div style="margin-top: 18px">
+        <mat-checkbox>ตัดริม</mat-checkbox>
+    </div>
+  </div>
+    <div fxFlex="11">
+      <div style="margin-top: 18px">
+        <mat-checkbox>ไม่ตัดริม</mat-checkbox>
+    </div>
+  </div>
+    <div fxFlex="4"></div>
+    <div fxFlex="10">
+      <mat-form-field class="example-full-width">
+        <input matInput [matDatepicker]="picker" placeholder="วันที่เริ่ม" [(ngModel)]="startdate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div fxFlex="2"></div>
+    <div fxFlex="10">
+      <mat-form-field class="example-full-width">
+        <input matInput>
+      </mat-form-field>
+    </div>
+  
+    <div fxFlex="4"></div>
+    <div fxFlex="10">
+      <mat-form-field class="example-full-width">
+        <input matInput [matDatepicker]="picker1" placeholder="วันที่สิ้นสุด" [(ngModel)]="enddate">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div fxFlex="2"></div>
+    <div fxFlex="10">
+      <mat-form-field class="example-full-width">
+        <input matInput>
+      </mat-form-field>
+    </div>
+  </div><br>
+
+  <div class="container" fxLayout="row" fxLayout.xs="column" fxFlexFill>
+    <div fxFlex="83">
+      <mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="TankNo">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>ม้วนที่</mat-header-cell>
+          <mat-cell *matCellDef="let finalinspection"> {{finalinspection.TankNo}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="MixingDate">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>ยาว M</mat-header-cell>
+          <mat-cell *matCellDef="let finalinspection"> {{finalinspection.MixingDate}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="SoildContent">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>หน้ากว้า cm/in</mat-header-cell>
+          <mat-cell *matCellDef="let finalinspection"> {{finalinspection.SoildContent}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="RefToDDNo">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>ชม.</mat-header-cell>
+          <mat-cell *matCellDef="let finalinspection"> {{finalinspection.RefToDDNo}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="Startngime">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>น้ำหนักแกน กก.</mat-header-cell>
+          <mat-cell *matCellDef="let finalinspection"> {{finalinspection.Startngime}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="In">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>น้ำหนักรวม กก.</mat-header-cell>
+          <mat-cell *matCellDef="let finalinspection"> {{finalinspection.In}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="Out">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>เกรด</mat-header-cell>
+          <mat-cell *matCellDef="let finalinspection"> {{finalinspection.Out}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="VesselWt">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>ตัวอย่าง เมตร:ชิ้น</mat-header-cell>
+          <mat-cell *matCellDef="let finalinspection"> {{finalinspection.VesselWt}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="RefToRcNo">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>หมายเหตุ</mat-header-cell>
+          <mat-cell *matCellDef="let finalinspection"> {{finalinspection.RefToRcNo}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+          <mat-header-cell *matHeaderCellDef>
+            <button mat-icon-button color="primary" (click)="addNew()">
+              <mat-icon aria-label="Example icon-button with a heart icon" >add</mat-icon>
+            </button>
+          </mat-header-cell>
+          <mat-cell *matCellDef="let row; let i=index;">
+            <button mat-icon-button color="accent">
+              <mat-icon aria-label="Edit">edit</mat-icon>
+            </button>
+            <button mat-icon-button color="accent">
+              <mat-icon aria-label="Delete">delete</mat-icon>
+            </button>
+          </mat-cell>
+
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;" matRipple class="element-row"></mat-row>
+      </mat-table>
+      <mat-paginator [length]="5" [pageSize]="10" [pageSizeOptions]="[10, 25]">
+      </mat-paginator>
+    </div>
+
+    <div fxFlex="0.2"></div>
+
+    <div fxFlex="17">
+      <mat-table [dataSource]="dataSourcedefect" matSort>
+        <ng-container matColumnDef="defect">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Defect</mat-header-cell>
+          <mat-cell *matCellDef="let finalinspection"> {{finalinspection.TankNo}} </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumnsdefect"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumnsdefect;" matRipple class="element-row"></mat-row>
+      </mat-table>
+      <mat-paginator [length]="5" [pageSize]="10" [pageSizeOptions]="[10, 25]">
+      </mat-paginator>
+    </div>
+  </div>
+
+</mat-card>

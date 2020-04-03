@@ -1,0 +1,58 @@
+<div fxLayout="column" fxFlexFill fxLayoutAlign="center center" style="background-image:url('./assets/login11.jpg');
+height: 100%;
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover; ">
+    <div fxLayout="column">
+
+        <div class="mat-elevation-z4">
+            <mat-card>
+                <mat-card-title>
+                    <!-- <form class="logo"> -->
+                        <img class="logo" src="./assets/CUlogo.png" style="width:180px; height: 150px;" >
+
+                    <!-- </form> -->
+
+                </mat-card-title>
+                <mat-card-title>
+                    <div class="userlogin" style="text-align: center;">
+                            <label> User login</label>
+                    </div>
+                             
+                </mat-card-title>
+                <mat-card-content>
+                    <form fxLayout="column" fxLayoutAlign="start stretch" [formGroup]="userForm" (ngSubmit)="login()">
+                        <div class="form">
+                            <div [formGroup]="loginGroup" style="width: 100%;">
+                                <mat-form-field class="full-width">
+                                    <input type="username" id="username" class="input" formControlName="usernameCtrl"
+                                        required placeholder="Please enter your username" [(ngModel)]="model.username"
+                                        matInput>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div *ngIf="formErrors.username" class="help is-danger">
+                            {{ formErrors.username }}
+                        </div>
+
+                        <div class="form">
+                            <div [formGroup]="loginGroup" style="width: 100%;">
+                                <mat-form-field class="full-width">
+                                    <input type="password" id="password" class="input" [(ngModel)]="model.password"
+                                        placeholder="please  enter your password" formControlName="passwordCtrl"
+                                        required matInput>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div *ngIf="formErrors.password" class="help is-danger">
+                            {{ formErrors.password }}
+                        </div>
+                        <button mat-raised-button color="primary" type="submit" (click)="btnLoginClick()">Log In</button>
+                        <br>
+                        <button mat-raised-button color="warn" type="clear" (click)="clear()">Clear</button>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

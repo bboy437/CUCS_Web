@@ -1,0 +1,24 @@
+
+<div class="mat-dialog-containerLogin">
+  <div class="container">
+      <mat-toolbar class="table-header">
+          <mat-icon class="iconsize">info</mat-icon>
+      </mat-toolbar>
+      <br>
+      <div>
+          <h3 class="textbody" mat-dialog-title>{{data.Messagebody}}</h3>
+      </div>
+
+      <table width="100%">
+          <tr>
+              <td style="width: 8%;">
+              </td>
+              <td style="width: 10%; ">
+                  <button mat-raised-button class="buttoncenter" color="primary" (click)="OKClick()"
+                      [mat-dialog-close]="true">OK</button>
+              </td>
+      </table><br>
+
+
+  </div>
+</div>

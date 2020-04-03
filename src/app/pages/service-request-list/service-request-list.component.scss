@@ -1,0 +1,79 @@
+.mat-toolbar-row {
+  height: 40px;
+}
+
+.mat-header-row {
+  background-color: #9cb5e4;
+  color: white;
+}
+ 
+
+.mat-row:nth-child(even) {
+  background-color: #e9e5e5;
+  color: white;
+}
+
+
+.mat-row {
+  min-height: 33px;
+}
+
+.mat-toolbar-row {
+  height: 40px;
+}
+
+.table-container {
+  padding: 5px 15px 15px 15px;
+}
+.table-component-holder {
+  border: 1px solid #327ebd;
+  background-color: white;
+}
+
+.mat-headline{
+  font-size: 16px
+}
+.mat-row:hover {
+  background-color:#faf9c8d3;
+}
+
+.buttonGreen {
+  background-color: #4CAF50;
+  color: white
+ } 
+ .mat-table{
+   width: 98.5%;
+   text-align: center;
+   margin-left: 0.8vw;
+ }
+
+
+.mat-horizontal-stepper-header{
+height: 50px !important;
+}
+
+.mat-btn-start-operation {
+background: rgb(151, 255, 125);
+}
+
+.mat-column-jobOrderNo{
+  flex: 0 0 10vw;
+}
+.mat-column-jobOrderDate{
+  flex: 0 0 8vw;
+}
+.mat-column-serialNo{
+  flex: 0 0 15vw;
+}
+.mat-column-equipmentDetail{
+  flex: 0 0 30vw;
+}
+.mat-column-currentStep{
+  flex: 0 0 8vw;
+}
+.mat-column-lastUpdateDate{
+  flex: 0 0 8vw;
+}
+.mat-column-lastStatus{
+  flex: 0 0 15vw;
+}

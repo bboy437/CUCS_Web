@@ -1,0 +1,193 @@
+<!-- <div class="spinner-loading-shade" *ngIf="isLoadingResults">
+  <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+</div> -->
+<app-production-record-header [ProductionPlanID]="ProductionPlanID"></app-production-record-header>
+<br>
+
+<mat-card class="column">
+  <mat-card-title class="card-container-right"> หัวม้วน</mat-card-title>
+
+  <mat-card  class="rowmatcardone" style="margin-top: 15px">
+    <div class="container" fxLayout="row" fxLayout.xs="column" fxFlexFill>
+      <div fxFlex="2"></div>
+      <div fxFlex="20">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="น้ำหนัก(g/m2)">
+        </mat-form-field>
+      </div>
+      <div fxFlex="5"></div>
+      <div fxFlex="20">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="ซ้าย">
+        </mat-form-field>
+      </div>
+      <div fxFlex="5"></div>
+      <div fxFlex="20">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="กลาง">
+        </mat-form-field>
+      </div>
+      <div fxFlex="5"></div>
+      <div fxFlex="20">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="ขวา">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="container" fxLayout="row" fxLayout.xs="column" fxFlexFill>
+      <div fxFlex="2"></div>
+      <div fxFlex="20">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="ความหนา (mm)">
+        </mat-form-field>
+      </div>
+      <div fxFlex="5"></div>
+      <div fxFlex="20">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="ซ้าย">
+        </mat-form-field>
+      </div>
+      <div fxFlex="5"></div>
+      <div fxFlex="20">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="กลาง">
+        </mat-form-field>
+      </div>
+      <div fxFlex="5"></div>
+      <div fxFlex="20">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="ขวา">
+        </mat-form-field>
+      </div>
+    </div>
+
+  </mat-card>
+  <mat-card  class="rowmatcardone"  style="margin-top: 5px">
+    <div class="container" fxLayout="row" fxLayout.xs="column" fxFlexFill>
+      <div fxFlex="2"></div>
+      <div fxFlex="20">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="องศา">
+        </mat-form-field>
+      </div>
+      <div fxFlex="5"></div>
+      <div fxFlex="20">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="หน้ากว้าง (cm)">
+        </mat-form-field>
+      </div>
+      <div fxFlex="5"></div>
+      <div fxFlex="20">
+          <!-- <input matInput placeholder="ความยาวผ้า (m)"> -->
+          <!-- แนวรอยพับผ้าดิบเฉียงขึ้นซ้าย <br><br> -->
+          <div style="margin-top: 5px">
+            <mat-button-toggle-group name="OKNG" aria-label="OK NG">
+              <mat-button-toggle [ngClass]="{'mat-button-toggle-checkedOK' : 'OK' === 'OK'}" value="OK">OK</mat-button-toggle>
+              <mat-button-toggle [ngClass]="{'mat-button-toggle-checkedNG' : 'OK' === 'NG'}" value="NG">NG</mat-button-toggle>
+            </mat-button-toggle-group>
+          </div>
+      </div>
+      <div fxFlex="5"></div>
+      <div fxFlex="20">
+        <!-- แนวรอยพับผ้าดิบเฉียงขึ้นซ้าย <br><br> -->
+        <div style="margin-top: 5px">
+          <mat-button-toggle-group name="OKNG" aria-label="OK NG">
+            <mat-button-toggle [ngClass]="{'mat-button-toggle-checkedOK' : 'OK' === 'OK'}" value="OK">OK</mat-button-toggle>
+            <mat-button-toggle [ngClass]="{'mat-button-toggle-checkedNG' : 'OK' === 'NG'}" value="NG">NG</mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
+    </div>
+    </div><br>
+  </mat-card><br>
+</mat-card><br>
+
+<mat-card class="column1">
+  <mat-card-header>
+    <mat-card-title class="card-container-right"> ท้ายม้วน</mat-card-title>
+  </mat-card-header>
+  <mat-card  class="rowmatcardone" style="margin-top: 15px">
+      <div class="container" fxLayout="row" fxLayout.xs="column" fxFlexFill>
+        <div fxFlex="2"></div>
+        <div fxFlex="20">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="น้ำหนัก(g/m2)">
+          </mat-form-field>
+        </div>
+        <div fxFlex="5"></div>
+        <div fxFlex="20">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="ซ้าย">
+          </mat-form-field>
+        </div>
+        <div fxFlex="5"></div>
+        <div fxFlex="20">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="กลาง">
+          </mat-form-field>
+        </div>
+        <div fxFlex="5"></div>
+        <div fxFlex="20">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="ขวา">
+          </mat-form-field>
+        </div>
+      </div>
+  
+      <div class="container" fxLayout="row" fxLayout.xs="column" fxFlexFill>
+        <div fxFlex="2"></div>
+        <div fxFlex="20">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="ความหนา (mm)">
+          </mat-form-field>
+        </div>
+        <div fxFlex="5"></div>
+        <div fxFlex="20">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="ซ้าย">
+          </mat-form-field>
+        </div>
+        <div fxFlex="5"></div>
+        <div fxFlex="20">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="กลาง">
+          </mat-form-field>
+        </div>
+        <div fxFlex="5"></div>
+        <div fxFlex="20">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="ขวา">
+          </mat-form-field>
+        </div>
+      </div>
+  
+    </mat-card>
+    <mat-card  class="rowmatcardone"  style="margin-top: 2px">
+      <div class="container" fxLayout="row" fxLayout.xs="column" fxFlexFill>
+        <div fxFlex="2"></div>
+        <div fxFlex="20">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="องศา">
+          </mat-form-field>
+        </div>
+        <div fxFlex="5"></div>
+        <div fxFlex="20">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="หน้ากว้าง (cm)">
+          </mat-form-field>
+        </div>
+        <div fxFlex="5"></div>
+        <div fxFlex="20">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="ความยาวผ้า (m)">
+          </mat-form-field>
+        </div>
+        <div fxFlex="5"></div>
+        <div fxFlex="20">
+          <!-- <mat-form-field class="example-full-width">
+          <input matInput placeholder="หัวม้วนผ้าดิบเรียบซ้าย-ขวา">
+        </mat-form-field> -->
+        </div>
+      </div>
+    </mat-card><br>
+  </mat-card>
